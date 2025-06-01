@@ -1,0 +1,31 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	               104
+  Customer Name :	           Binod
+  Customer Id :	            232323
+  Customer Address :	        sahil
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		            1                      760.0
+  Black Shampoo		           3                     1852.5
+  External Cream		          2                     1900.0
+  ------------------------------------------------------
+
+  Total Amount  		                    Rs 4512.5
+  Offer  		                      Rs 225.6
+  Discount  		                      Rs 451.2
+
+  Amount Payable  		                  Rs 4061.2
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Alovera                     2
+  Flexseed                     3
+  Graps Seed                     2

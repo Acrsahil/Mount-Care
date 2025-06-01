@@ -1,0 +1,65 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	                52
+  Customer Name :	              ss
+  Customer Id :	                ss
+  Customer Address :	           ss
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		            1                      760.0
+  Asparagus		            3                     2880.0
+  Cordyceps		            3                     6270.0
+  Cordyceps		            3                     3420.0
+  Ganoderma		            3                     4275.0
+  Ginseng		            3                     5415.0
+  Graps Seed		            3                     4005.0
+  Java Plum		            3                     3135.0
+  Moringa Leaf		            3                     3135.0
+  Safed Musli		            3                     3420.0
+  Wood Apple		            3                     2850.0
+  All Purpose Cream	        3                     1852.5
+  Black Shampoo		           3                     1852.5
+  External Cream		          3                     2850.0
+  Gilsering Cream		         3                      285.0
+  Hair Oil		            3                     1710.0
+  Mountcare Shampoo		       3                     1425.0
+  Shine Cream		            3                     2850.0
+  Soap		            3                      426.0
+  Body Oil		            3                     1425.0
+  Gastrina		            3                      750.0
+  Herbal Paak		            3                     5130.0
+  Immunity Paak		           3                     4704.0
+  Sadabahar Tea		           3                     1425.0
+  Tooth Powder		            3                     1569.0
+  ------------------------------------------------------
+
+  Total Amount  		                   Rs 67819.0
+  Offer  		                     Rs 3391.0
+  Discount  		                     Rs 6781.9
+
+  Amount Payable  		                 Rs 61037.1
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Asparagus                     3
+  Cordyceps                     3
+  Flexseed                     3
+  Ganoderma                     3
+  Ginseng                     3
+  Graps Seed                     3
+  Java Plum                     3
+  Moringa Leaf                     3
+  Wood Apple                     3
+  Black Shampoo                     3
+  External Cream                     3
+  Gilsering Cream                     3
+  Hair Oil                     3
+  Mount Shampoo                     3
+  Soap                     3

@@ -1,0 +1,6 @@
+nepali-datetime
+openpyxl
+reportlab
+pywin32
+ttkbootstrap
+mysql-connector-python

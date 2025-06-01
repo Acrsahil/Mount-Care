@@ -9,7 +9,22 @@ from tkinter import END
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from win32com import client
-from tkinter import ttk
+from ttkbootstrap import Style
+import ttkbootstrap as ttk
+import amounttowords
+
+
+
+if not os.path.exists('billno.txt'):
+    with open("billno.txt","w+") as f:
+        f.write('1')
+else:
+    with open("billno.txt","r+") as f:
+        billno =  f.read()
+        billno = int(billno)
+        with open("billno.txt","w") as fl:
+            updatebill = billno+1
+            update_bill = fl.write(str(updatebill))
 
 
 
@@ -49,21 +64,24 @@ pricelist = {
     "Gastrina": 250,
     "Herbal Paak": 1710,
     "Immunity Paak": 1568,
-    "Paste": 190,
+    "Paste": 200,
     "Sadabahar Tea": 475,
     "Tooth Powder": 523
 }
+
+
 def make_pdf():
     try:
+        global billno
         app = client.DispatchEx("Excel.Application")
         app.Interactive = False
         app.Visible = False
+        app.DisplayAlerts = False  # 🚫 Prevents prompts like "Do you want to save?"
 
-        file = r"C:\Users\acrsa\OneDrive\Desktop\Mount_Care\brocode.xlsx"
-
+        file = r"C:\Users\archlinux\Desktop\Mount-Care\brocode.xlsx"
         excel_dir = os.path.dirname(file)
 
-        billno = str(billnumber)
+        billno = str(billno)
         billdir = "PDFbills/"
         billno += ".pdf"
         billdir += billno
@@ -74,13 +92,25 @@ def make_pdf():
             os.makedirs(os.path.dirname(pdf_file_path))
 
         workbook = app.Workbooks.Open(file)
-        workbook.ActiveSheet.ExportAsFixedFormat(0, pdf_file_path)
-        workbook.Close()
+        sheet = workbook.ActiveSheet
+
+        # ✅ Fit to one page without zooming out too much
+        sheet.PageSetup.Zoom = False
+        sheet.PageSetup.FitToPagesWide = 1
+        sheet.PageSetup.FitToPagesTall = 1
+
+        # ✅ Center content horizontally
+
+        sheet.ExportAsFixedFormat(0, pdf_file_path)
+
+        workbook.Close(SaveChanges=False)  # 🔐 Don't save changes
 
         print("Successfully converted to PDF!")
 
     except Exception as e:
         print("Error:", e)
+
+
 
 def send_email():
     pass
@@ -117,12 +147,12 @@ def write_to_excel():
     global start,end,Ostart,Oend
     start = 13
     end = 13+mainbillcnt
+    print("this is end->",end)
 
 
     total = end+1
-    offer = end+2
-    discount = end+3
-    amtpay = end+5
+    discount = end+2
+    amtpay = end+3
 
     for product, qty in mainbill_qty.items():
         temp.append(product)
@@ -145,87 +175,85 @@ def write_to_excel():
     while row < end+1 and i<len(temp):
         ws.insert_rows(row)
 
-        ws['A'+str(row)] = temp[i]
-        ws['B'+str(row)] = mainbill_qty[temp[i]]
-        ws['C'+str(row)] = pricelist[temp[i]]
-        ws['D'+str(row)] = mainbill_tprice[temp[i]]
+        ws['C'+str(row)] = i+1
+        ws['D'+str(row)] = temp[i]
+        ws['E'+str(row)] = mainbill_qty[temp[i]]
+        ws['F'+str(row)] = pricelist[temp[i]]
+        ws['G'+str(row)] = mainbill_tprice[temp[i]]
 
-        ws['B'+str(row)].alignment = alignment
-        ws['C'+str(row)].alignment = shrink
-        ws['D'+str(row)].alignment = shrink
+        ws['E'+str(row)].alignment = alignment
+        ws['F'+str(row)].alignment = shrink
+        ws['G'+str(row)].alignment = shrink
 
-        ws['A'+str(row)].font = Font(bold=True,size=14)
-        ws['B'+str(row)].font = Font(bold=True,size=14)
         ws['C'+str(row)].font = Font(bold=True,size=14)
         ws['D'+str(row)].font = Font(bold=True,size=14)
+        ws['E'+str(row)].font = Font(bold=True,size=14)
+        ws['F'+str(row)].font = Font(bold=True,size=14)
+        ws['G'+str(row)].font = Font(bold=True,size=14)
 
-        ws['A'+str(row)].border = border
-        ws['B'+str(row)].border = border
+        ws['B'+str(row)].fill = PatternFill(fill_type= 'solid',start_color='9c2c95')
+        ws['C'+str(row)].fill = PatternFill(fill_type= 'solid',start_color='9c2c95')
+        ws['D'+str(row)].fill = PatternFill(fill_type= 'solid',start_color='9c2c95')
+        ws['E'+str(row)].fill = PatternFill(fill_type= 'solid',start_color='9c2c95')
+        ws['F'+str(row)].fill = PatternFill(fill_type= 'solid',start_color='9c2c95')
+        ws['G'+str(row)].fill = PatternFill(fill_type= 'solid',start_color='9c2c95')
+        ws['H'+str(row)].fill = PatternFill(fill_type= 'solid',start_color='9c2c95')
+
         ws['C'+str(row)].border = border
         ws['D'+str(row)].border = border
+        ws['E'+str(row)].border = border
+        ws['F'+str(row)].border = border
+        ws['G'+str(row)].border = border
 
 
         i+=1
         row+=1
     print(mainbillcnt)
 
-    ws['D'+str(total)] = Totals
-    ws['D'+str(offer)] = Offers
-    ws['D'+str(discount)] = Discounts
-    ws['D'+str(amtpay)] = Amountpays
+    ws['G'+str(total)] = Totals
+    ws['G'+str(discount)] = Discounts
+    ws['G'+str(amtpay)] = Amountpays
+    print(type(Amountpay))
+    words = amounttowords.number_to_words(int(float(Amountpay)))
+
+    if len(words)>=44:
+        temp = words
+        ans = ""
+        lsts = words.split() #"sahil is a bad boy" "sahil is"
+        while len(temp)>=44:
+            ans = lsts.pop() + " " + ans
+            temp = " ".join(lsts)
+        ws['E'+str(amtpay+1)] = temp
+        ws['E'+str(amtpay+2)] = ans
+    else:
+        ws['E'+str(amtpay+1)] = words
+
 
 
 
     total = end
-    offer = end+1
-    discount = end+2
-    amtpay = end+4
-
-    #Offer Section
-    Ostart = amtpay+5
-    Oend = Ostart+offerbillcnt
-
-    j = 0
-
-    Orow = Ostart
-    while Orow < Oend+1 and j<len(Otemp):
-
-        ws['A'+str(Orow)] = Otemp[j]
-        ws['B'+str(Orow)] = offer_qty[Otemp[j]]
-
-        ws['B'+str(Orow)].alignment = alignment
-        
-        ws['A'+str(Orow)].font = Font(bold=True,size=14)
-        ws['B'+str(Orow)].font = Font(bold=True,size=14)
-
-        ws['A'+str(Orow)].border = border
-        ws['B'+str(Orow)].border = border
-
-        j+=1
-        Orow+=1
+    discount = end
+    amtpay = end+1
 
     
 
 
 def save_bill():
-    global billnumber
     result = messagebox.askyesno('Confirm','Do you want to save the bill?')
     if result:
         bill_content = textarea.get(1.0,END)
-        file = open(f'bills/{billnumber}.txt','w')
+        file = open(f'bills/{billno}.txt','w')
         file.write(bill_content)
         file.close()
-        messagebox.showinfo(f'Sucess,{billnumber} is saved sucessfully')
+        messagebox.showinfo(f'Sucess,{billno} is saved sucessfully')
         wb.save('brocode.xlsx')
-        billnumber=random.randint(100,1000)
 
 
 
-billnumber=random.randint(100,1000)
 #writing in excel file
 
-ws['B8'].value = billnumber
-# ws['B8'].alignment = 
+ws['E7'].value = billno
+print("hey")
 
 def bill_area():
     if nameEntry.get()=='' or MoidEntry.get() == '' or dealerEntry.get() == '' or sdealerEntry.get() == '' or AddressEntry.get() == '':
@@ -241,7 +269,7 @@ def bill_area():
         textarea.insert(END,'\t*** Mount Care International Pvt Ltd ***\n')
         textarea.insert(END,'\t\tKathmandu-3, Maharajung Chok \n')
         textarea.insert(END,'\t    Phone Number : 9851177355,9823681553 \n')
-        textarea.insert(END,f'\n  Bill Number :\t {billnumber:>17}')
+        textarea.insert(END,f'\n  Bill Number :\t {billno:>17}')
         textarea.insert(END,f'\n  Customer Name :\t {nameEntry.get():>15}')
         textarea.insert(END,f'\n  Customer Id :\t {MoidEntry.get():>17}')
         textarea.insert(END,f'\n  Customer Address :\t {AddressEntry.get():>12}\n')
@@ -249,10 +277,10 @@ def bill_area():
         textarea.insert(END,f'\n  Product    \t\t\tQuantity                \t\t\tPrice')
         textarea.insert(END,f'\n  ====================================================== ')
 
-        ws['B9'].value = MoidEntry.get() #Customer ID
-        ws['B7'].value = nameEntry.get() #Customer Name
-        ws['B10'].value = AddressEntry.get() #Customer Address
-        ws['D7'].value = today # Date
+        ws['E9'].value = MoidEntry.get() #Customer ID
+        ws['E8'].value = nameEntry.get() #Customer Name
+        ws['E10'].value = AddressEntry.get() #Customer Address
+        ws['G7'].value = today # Date
         
         global mainbillcnt,offerbillcnt,mainbill_qty,mainbill_tprice
         mainbill_tprice = {} # Store the Price of the Product Inserted by Input Field
@@ -270,19 +298,19 @@ def bill_area():
 
         if AsparagusEntry.get() != '0':
             mainbillcnt += 1
-            textarea.insert(END, f'\n  Asparagus\t\t{AloveraEntry.get():>13}  {aloveraprice:>25}')
+            textarea.insert(END, f'\n  Asparagus\t\t{AsparagusEntry.get():>13}  {asparagusprice:>25}')
             mainbill_qty["Asparagus"] = AsparagusEntry.get() #Product and qty
             mainbill_tprice["Asparagus"] = asparagusprice # Product and price
 
         if CordycepsEntry.get() != '0':
             mainbillcnt += 1
-            textarea.insert(END, f'\n  Cordyceps\t\t{AloveraEntry.get():>13}  {aloveraprice:>25}')
+            textarea.insert(END, f'\n  Cordyceps\t\t{CordycepsEntry.get():>13}  {cordycepsprice:>25}')
             mainbill_qty["Cordyceps"] = CordycepsEntry.get() #Product and qty
             mainbill_tprice["Cordyceps"] = cordycepsprice # Product and price
 
         if FlexseedEntry.get() != '0':
             mainbillcnt += 1
-            textarea.insert(END, f'\n  Cordyceps\t\t{AloveraEntry.get():>13}  {aloveraprice:>25}')
+            textarea.insert(END, f'\n  Cordyceps\t\t{FlexseedEntry.get():>13}  {flexseedprice:>25}')
             mainbill_qty["Flex Seed"] = FlexseedEntry.get() #Product and qty
             mainbill_tprice["Flex Seed"] = flexseedprice # Product and price
 
@@ -403,18 +431,18 @@ def bill_area():
             mainbill_tprice["Tooth Powder"] = toothpowderprice # Product and price
         textarea.insert(END,f'\n  ------------------------------------------------------')
 
-        global Totals,Offers,Discounts,Amountpays
+        global Totals,Offers,Discounts,Amountpays,Amountpay
 
         Totals = TotalEntry.get()
         Offers = OfferEntry.get()
         Discounts = DiscountEntry.get()
-        Amountpays = AmountpayableEntry.get()
+        Amountpay = AmountpayableEntry.get()
 
 
         Totals = "Rs " + Totals
         Offers = "Rs " + Offers
         Discounts = "Rs " + Discounts
-        Amountpays = "Rs "+ Amountpays
+        Amountpays = "Rs "+ Amountpay
 
 
         
@@ -439,6 +467,7 @@ def bill_area():
         write_to_excel()
         save_bill()
         make_pdf()
+        ws['E'+str(end+5)] = '=""'
         reverse_bill()
         wb.save('brocode.xlsx')
 
@@ -529,8 +558,7 @@ root=Tk()
 root.title('Mount Care System')
 root.geometry('1920x1080')
 root.iconbitmap('icon.ico')
-style = ttk.Style()
-style.theme_use('clam')
+style = Style(theme='darkly')
 headingLabel=Label(root,text='Mount Care Billing System',font=('times new roman',30,'bold'),bg='gray20',fg='chartreuse3',bd=13,relief=GROOVE)
 headingLabel.pack(fill=X)
 
@@ -543,7 +571,6 @@ nameLabel.grid(row=0,column=0)
 
 nameEntry = Entry(customer_details_Frame,font=('arial',15),bd=7,width=18) #name field
 nameEntry.grid(row=0,column=1,padx=(0,20))
-
 
 
 AddressLabel =Label(customer_details_Frame,text='Address',font=('times new roman',15,'bold'),bg='gray20',fg='white')

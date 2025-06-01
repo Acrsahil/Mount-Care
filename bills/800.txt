@@ -1,0 +1,30 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	               800
+  Customer Name :	         asdfasf
+  Customer Id :	          asdfasdf
+  Customer Address :	      asdfasf
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		            2                     1520.0
+  Herbal Paak		            2                     3420.0
+  Immunity Paak		           3                     4704.0
+  ------------------------------------------------------
+
+  Total Amount  		                    Rs 9644.0
+  Offer  		                      Rs 482.2
+  Discount  		                      Rs 964.4
+
+  Amount Payable  		                  Rs 8679.6
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Alovera                     2
+  Asparagus                     3

@@ -1,0 +1,35 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	                14
+  Customer Name :	               a
+  Customer Id :	                ss
+  Customer Address :	           ss
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		            3                     2280.0
+  Asparagus		            3                     2880.0
+  Cordyceps		            3                     6270.0
+  Cordyceps		            3                     3420.0
+  Ginseng		            3                     5415.0
+  Graps Seed		            3                     4005.0
+  Java Plum		            3                     3135.0
+  Moringa Leaf		            3                     3135.0
+  Safed Musli		            3                     3420.0
+  ------------------------------------------------------
+
+  Total Amount  		                   Rs 33960.0
+  Offer  		                     Rs 1698.0
+  Discount  		                     Rs 3396.0
+
+  Amount Payable  		                 Rs 30564.0
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Alovera                     2

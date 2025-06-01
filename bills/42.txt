@@ -1,0 +1,50 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	                42
+  Customer Name :	              ss
+  Customer Id :	                ss
+  Customer Address :	           ss
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		            4                     3040.0
+  Asparagus		            4                     3840.0
+  Cordyceps		            4                     8360.0
+  Ganoderma		            4                     5700.0
+  Ginseng		            4                     7220.0
+  Graps Seed		            4                     5340.0
+  Java Plum		            4                     4180.0
+  Moringa Leaf		            4                     4180.0
+  Safed Musli		            4                     4560.0
+  All Purpose Cream	        4                     2470.0
+  Black Shampoo		           4                     2470.0
+  External Cream		          4                     3800.0
+  Gilsering Cream		         4                      380.0
+  Hair Oil		            4                     2280.0
+  Mountcare Shampoo		       4                     1900.0
+  Shine Cream		            4                     3800.0
+  Soap		            4                      568.0
+  Body Oil		            4                     1900.0
+  Gastrina		            4                     1000.0
+  Herbal Paak		            4                     6840.0
+  Immunity Paak		           4                     6272.0
+  Paste		            4                      760.0
+  Sadabahar Tea		           4                     1900.0
+  Tooth Powder		           44                    23012.0
+  ------------------------------------------------------
+
+  Total Amount  		                  Rs 105772.0
+  Offer  		                     Rs 5288.6
+  Discount  		                    Rs 10577.2
+
+  Amount Payable  		                 Rs 95194.8
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Alovera                     1

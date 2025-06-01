@@ -1,0 +1,52 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	                71
+  Customer Name :	              ss
+  Customer Id :	                ss
+  Customer Address :	          sss
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		          149                   113240.0
+  Asparagus		          100                    96000.0
+  Cordyceps		         1000                  2090000.0
+  Cordyceps		            4                     4560.0
+  Ganoderma		            4                     5700.0
+  Ginseng		            4                     7220.0
+  Graps Seed		            4                     5340.0
+  Java Plum		            4                     4180.0
+  Moringa Leaf		            4                     4180.0
+  Safed Musli		            4                     4560.0
+  Wood Apple		            4                     3800.0
+  All Purpose Cream	        4                     2470.0
+  Black Shampoo		           4                     2470.0
+  External Cream		          4                     3800.0
+  Gilsering Cream		         4                      380.0
+  Hair Oil		            4                     2280.0
+  Mountcare Shampoo		       4                     1900.0
+  Shine Cream		            4                     3800.0
+  Soap		            4                      568.0
+  Body Oil		            4                     1900.0
+  Gastrina		            4                     1000.0
+  Herbal Paak		            4                     6840.0
+  Immunity Paak		           4                     6272.0
+  Paste		            4                      760.0
+  Sadabahar Tea		           4                     1900.0
+  Tooth Powder		            4                     2092.0
+  ------------------------------------------------------
+
+  Total Amount  		                 Rs 2377212.0
+  Offer  		                   Rs 118860.6
+  Discount  		                   Rs 237721.2
+
+  Amount Payable  		               Rs 2139490.8
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Alovera                     5

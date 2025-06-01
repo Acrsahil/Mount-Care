@@ -1,0 +1,28 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	                24
+  Customer Name :	              ss
+  Customer Id :	                ss
+  Customer Address :	           ss
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		            1                      760.0
+  Asparagus		            2                     1920.0
+  ------------------------------------------------------
+
+  Total Amount  		                    Rs 2680.0
+  Offer  		                      Rs 134.0
+  Discount  		                      Rs 268.0
+
+  Amount Payable  		                  Rs 2412.0
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Alovera                     1

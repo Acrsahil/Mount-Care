@@ -1,0 +1,56 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	                64
+  Customer Name :	              ss
+  Customer Id :	                ss
+  Customer Address :	           ss
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		            4                     3040.0
+  Asparagus		            4                     3840.0
+  Cordyceps		            4                     8360.0
+  Cordyceps		            4                     4560.0
+  Ganoderma		            4                     5700.0
+  Ginseng		            4                     7220.0
+  Graps Seed		            4                     5340.0
+  Java Plum		            4                     4180.0
+  Moringa Leaf		            4                     4180.0
+  Safed Musli		            4                     4560.0
+  Wood Apple		            4                     3800.0
+  All Purpose Cream	        4                     2470.0
+  Black Shampoo		           4                     2470.0
+  External Cream		          4                     3800.0
+  Gilsering Cream		         4                      380.0
+  Hair Oil		            4                     2280.0
+  Mountcare Shampoo		       4                     1900.0
+  Shine Cream		            4                     3800.0
+  Soap		            4                      568.0
+  Body Oil		            4                     1900.0
+  ------------------------------------------------------
+
+  Total Amount  		                   Rs 74348.0
+  Offer  		                     Rs 3717.4
+  Discount  		                     Rs 7434.8
+
+  Amount Payable  		                 Rs 66913.2
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Alovera                     4
+  Asparagus                     4
+  Cordyceps                     4
+  Flexseed                     4
+  Ganoderma                     4
+  Ginseng                     4
+  Graps Seed                     4
+  Java Plum                     4
+  Moringa Leaf                     4
+  Wood Apple                     4
+  All Purpose Cream                     4

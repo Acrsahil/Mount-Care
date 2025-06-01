@@ -1,0 +1,35 @@
+	*** Mount Care International Pvt Ltd ***
+		Kathmandu-3, Maharajung Chok 
+	    Phone Number : 9851177355,9823681553 
+
+  Bill Number :	                29
+  Customer Name :	           Binod
+  Customer Id :	                23
+  Customer Address :	        kapan
+
+  ====================================================== 
+  Product    			Quantity                			Price
+  ====================================================== 
+  Alovera		            2                     1520.0
+  Asparagus		            2                     1920.0
+  Cordyceps		            2                     4180.0
+  Cordyceps		            2                     2280.0
+  Ganoderma		            2                     2850.0
+  Ginseng		            2                     3610.0
+  Graps Seed		            2                     2670.0
+  Java Plum		           22                    22990.0
+  Safed Musli		            2                     2280.0
+  ------------------------------------------------------
+
+  Total Amount  		                   Rs 44300.0
+  Offer  		                     Rs 2215.0
+  Discount  		                     Rs 4430.0
+
+  Amount Payable  		                 Rs 39870.0
+		### Offer Products ###
+
+  ====================================================== 
+  Product    			Quantity
+
+  ====================================================== 
+  Alovera                     2
